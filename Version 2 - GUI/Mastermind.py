@@ -1,9 +1,7 @@
 from random import randint
 import operator
-from tkinter import *
+from tkinter import Toplevel, Menu, Message, Button, Entry
 from tkinter import messagebox
-from random import randint
-
 	
 class Master_Mind:
 	def __init__(self):
@@ -45,7 +43,7 @@ class Master_Mind:
 	def give_directions(self):
 		try:
 			self.directions.deiconify()
-		except:
+		except Exception:
 			self.directions = Toplevel()
 			self.directions.iconbitmap("Games\icecreamicon.ico")
 			self.directions.geometry("%dx%d%+d%+d" % (1000, 600, 250, 125))
@@ -61,12 +59,12 @@ class Master_Mind:
 			if int(self.num.get()) <= 6 or int(self.num.get() > 0):
 				for k in range(int(self.num.get())):
 					self.game += [str(randint(1,6))]	
-		except:
+		except Exception:
 			messagebox.showwarning("Invalid Entry", "Please try again.")
 			try:
 				self.num_guesses.destroy()
 				Master_Mind()
-			except:
+			except Exception:
 				pass
 		self.get_guess()
 	
@@ -156,7 +154,7 @@ class Master_Mind:
 			try:
 				if self.gameboard.winfo_children() == 1:
 					pass
-			except:
+			except Exception:
 				self.gameboard = Toplevel(bg = "#%02x%02x%02x" % (255, 166, 0))
 				self.gameboard.iconbitmap("Games\icecreamicon.ico")
 				self.gameboard.geometry("%dx%d%+d%+d" % (1200, 600, 250, 125))
@@ -173,7 +171,7 @@ class Master_Mind:
 			self.guess.grid(row = 2, column = 0, columnspan = 3)
 			self.guess.bind("<Return>", self.process)
 		else:
-			win_lose()
+			self.win_lose()
 			
 	def process(self, n):
 		try:
@@ -244,7 +242,7 @@ class Master_Mind:
 		self.scores.append((self.score, self.name.get(), int(self.num.get())))
 		self.scores.sort(key = operator.itemgetter(0))
 		self.scores.sort(key = operator.itemgetter(2), reverse = True)
-		file2 = open("Name_Score.txt", "w")
+		file2 = open(r"Version 1 - Command Prompt\Name_Score.txt", "w")
 		for element in self.scores:
 			try:
 				file2.write(str(element[1]) + "\t" + str(element[0]) + "\t" + str(element[2]) + "\n")
@@ -257,7 +255,7 @@ class Master_Mind:
 		self.yourscore = Message(self.highScores, text = "Your Score:  " + str(self.count + 1), bg = "#%02x%02x%02x" % (255, 166, 0))
 		self.yourscore.pack()
 		#print("\t\t\t\t\t\t\t\t\t\t\tHIGH SCORES:\tLENGTH:\n\n")
-		file = open("Name_Score.txt", "r")
+		file = open(r"Version 1 - Command Prompt\Name_Score.txt", "r")
 		text = file.readlines()
 		i = 0
 		for line in text:

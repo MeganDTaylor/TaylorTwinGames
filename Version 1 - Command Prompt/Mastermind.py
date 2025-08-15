@@ -133,7 +133,7 @@ class Master_Mind:
 	def Record_Score(self):
 		score = self.count + 1
 		name = input("\n\n\t\t\t\t\t\t\t\t\t\t\tPlease enter your name:\t")
-		file1 = open("Name_Score.txt", "r")
+		file1 = open(r"Version 1 - Command Prompt\Name_Score.txt", "r")
 		lines = file1.readlines()
 		file1.close()
 		scores = []
@@ -146,7 +146,7 @@ class Master_Mind:
 		scores.append((score, name, self.num))
 		scores.sort(key = operator.itemgetter(0))
 		scores.sort(key = operator.itemgetter(2), reverse = True)
-		file2 = open("Name_Score.txt", "w")
+		file2 = open(r"Version 1 - Command Prompt\Name_Score.txt", "w")
 		for element in scores:
 			try:
 				file2.write(str(element[1]) + "\t" + str(element[0]) + "\t" + str(element[2]) + "\n")
@@ -161,7 +161,7 @@ class Master_Mind:
 		print("\t\t\t\t\t\t\t\t\t\t\tYOUR SCORE:\n")
 		print("\t\t\t\t\t\t\t\t\t\t\t     " + str(self.count + 1) + "\n")
 		print("\t\t\t\t\t\t\t\t\t\t\tHIGH SCORES:\tLENGTH:\n\n")
-		file = open("Name_Score.txt", "r")
+		file = open(r"Version 1 - Command Prompt\Name_Score.txt", "r")
 		text = file.readlines()
 		i = 0
 		for line in text:

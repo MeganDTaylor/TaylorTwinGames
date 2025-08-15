@@ -1,11 +1,8 @@
-from random import randint
 import os
 from Hangman import Hangman
 from Battleship import Battleship
 from Mastermind import Master_Mind
 from Guessing_Game import Guessing_Game
-
-import sys
 
 def clear():
 	os.system('cls')
@@ -25,7 +22,7 @@ def print_title():
 def play(ans = None):
 	print("The Taylor Twins, Version 2.2 (5/5/2018)")
 	
-	if ans == None:
+	if ans is None:
 		while True:
 			try:
 				print_title()

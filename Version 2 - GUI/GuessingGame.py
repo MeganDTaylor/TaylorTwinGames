@@ -1,4 +1,4 @@
-from tkinter import  *
+from tkinter import  Toplevel, Menu, Message, Button, Entry
 from tkinter import messagebox
 from random import randint
 
@@ -28,7 +28,7 @@ class GuessingGame():
 	def give_directions(self):
 		try:
 			self.directions.deiconify()
-		except:
+		except Exception:
 			self.directions = Toplevel()
 			self.directions.geometry("%dx%d%+d%+d" % (1000, 600, 250, 125))
 		for widget in self.directions.winfo_children():
@@ -39,7 +39,7 @@ class GuessingGame():
 		self.moveon.pack()
 		
 	def get_score(self):
-		file = open("Games/High_Score.txt", "r")
+		file = open(r"Version 1 - Command Prompt\High_Score.txt", "r")
 		self.high_score = file.read()
 		file.close()
 		
@@ -86,7 +86,7 @@ class GuessingGame():
 		
 			if (self.turn < int(self.high_score)) or (int(self.high_score) == 0):
 				self.high_score = self.turn
-				file = open("High_Score.txt", "w")
+				file = open(r"Version 1 - Command Prompt\High_Score.txt", "w")
 				file.write(str(self.high_score))
 				file.close()
 		elif int(self.guess_number) > self.random_number:

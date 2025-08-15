@@ -1,5 +1,4 @@
-from tkinter import  *
-from tkinter import messagebox
+from tkinter import  Toplevel, Menu, Message, Button
 from random import randint
 
 class Battleship():
@@ -29,7 +28,7 @@ class Battleship():
 	def give_directions(self):
 		try:
 			self.directions.deiconify()
-		except:
+		except Exception:
 			self.directions = Toplevel()
 			self.directions.geometry("%dx%d%+d%+d" % (1000, 600, 250, 125))
 		for widget in self.directions.winfo_children():

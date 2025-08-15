@@ -49,7 +49,7 @@ class Battleship:
 			except ValueError:
 				print ("\n\t\t\t\t\t\t\t\t\t\t\t\t\tOops, that's not even in the ocean.")
 				print("\t\t\t\t\t\t\t\t\t\t\t\t\tTry again!")
-			except:
+			except Exception:
 				print("\t\t\t\t\t\t\t\t\t\t\t\t\tPlease enter a valid number!")
 			else:
 				break
@@ -61,7 +61,6 @@ class Battleship:
 		input("\t\t\t\t\t\t\t\t\t\t\tPress ENTER to continue.")
 		
 	def create_board(self):
-		board = []
 		for x in range(5):
 			self.board.append(["~"] * 5)
 		self.ship_row = randint(1, len(self.board))

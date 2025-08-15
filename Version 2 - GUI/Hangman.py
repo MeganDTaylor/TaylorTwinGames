@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Toplevel, Message, Button, Menu, Entry
 from tkinter import messagebox
 from random import randint
 
@@ -32,7 +32,7 @@ class Hangman():
 	def give_directions(self):
 		try:
 			self.directions.deiconify()
-		except:
+		except Exception:
 			self.directions = Toplevel()
 			self.directions.geometry("%dx%d%+d%+d" % (1000, 600, 250, 125))
 		for widget in self.directions.winfo_children():
@@ -95,7 +95,7 @@ one letter at a time.", width = 1000, pady = 200, font = ('segoe print', 10))
 		try:
 			self.refresh()
 			self.get_guess()
-		except:
+		except Exception:
 			pass
 	def refresh(self, e = None):
 		if self.num == "2":
@@ -120,7 +120,7 @@ one letter at a time.", width = 1000, pady = 200, font = ('segoe print', 10))
 			messagebox.showwarning("Invalid Entry", "Please enter only letters, please.")
 			try:
 				self.num_players.destroy()
-			except:
+			except Exception:
 				pass
 			Hangman()
 		
@@ -144,7 +144,7 @@ one letter at a time.", width = 1000, pady = 200, font = ('segoe print', 10))
 		try:
 			for widget in self.gameboard.winfo_children():
 					widget.destroy()
-		except:
+		except Exception:
 			self.gameboard = Toplevel(bg = "#%02x%02x%02x" % (115, 255, 100))
 			self.gameboard.iconbitmap("Games\icecreamicon.ico")
 			self.gameboard.geometry("%dx%d%+d%+d" % (1000, 600, 250, 125))

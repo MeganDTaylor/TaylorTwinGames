@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Frame, Menu, Message, Button, Tk
 from Hangman import Hangman
 from Battleship import Battleship
 from Mastermind import Master_Mind

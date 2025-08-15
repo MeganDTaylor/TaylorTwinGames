@@ -26,7 +26,7 @@ class Guessing_Game:
 					This is a guessing game. Guess the random number between 1 and 100! You have as many guesses as you need,\n\t\t\t\t\tbut try to get it in as few guesses as you can!\n")
 	def play_game(self):
 		self.welcome()
-		file = open("High_Score.txt", "r")
+		file = open(r"Version 1 - Command Prompt\High_Score.txt", "r")
 		self.high_score = file.read()
 		file.close()
 		print("\t\t\t\t\t\t\t\t\t\t\tBest Score: ", self.high_score)
@@ -49,7 +49,7 @@ class Guessing_Game:
 				if (self.turn < int(self.high_score)) or (int(self.high_score) == 0):
 					print("\t\t\t\t\t\t\t\t\t\t\tBest Score!")
 					self.high_score = self.turn
-					file = open("High_Score.txt", "w")
+					file = open(r"Version 1 - Command Prompt\High_Score.txt", "w")
 					file.write(str(self.high_score))
 					file.close()
 				return
