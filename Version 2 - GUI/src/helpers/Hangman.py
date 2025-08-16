@@ -7,6 +7,8 @@ helpers_directory = os.path.dirname(os.path.abspath(__file__))
 src_directory = os.path.dirname(helpers_directory)
 version2_path = os.path.dirname(src_directory)
 img_path = os.path.join(version2_path, "imgs", "icecreamicon.ico")
+games_directory = os.path.dirname(version2_path)
+common_directory = os.path.join(games_directory, "Common Files")
 
 
 class Hangman:
@@ -448,7 +450,7 @@ one letter at a time.",
         self.get_guess()
 
     def get_word(self, num):
-        file = open(rf"{version2_path}\Hangman_Words\{num}.txt")
+        file = open(rf"{common_directory}\Hangman_Words\{num}.txt")
         words = []
         lines = file.readlines()
         for line in lines:

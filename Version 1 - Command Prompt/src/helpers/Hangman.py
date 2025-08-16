@@ -1,12 +1,11 @@
 from random import randint
 import os
 
-script_directory = os.path.dirname(os.path.abspath(__file__))
-helpers_directory = os.path.dirname(script_directory)
+helpers_directory = os.path.dirname(os.path.abspath(__file__))
 src_directory = os.path.dirname(helpers_directory)
-version1_directory = os.path.dirname(src_directory)
-
-version1_path = os.path.join(version1_directory, "Version 1 - Command Prompt")
+version1_path = os.path.dirname(src_directory)
+games_directory = os.path.dirname(version1_path)
+common_directory = os.path.join(games_directory, "Common Files")
 
 
 def clear():
@@ -92,9 +91,8 @@ class Hangman:
                         "											What word would you like to choose?\n\n\t\t\t\t\t\t\t\t\t\t\t\t"
                     )
                     clear()
-                    for letter in game_word:
-                        if letter in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]:
-                            raise ValueError
+                    if any(char.isdigit() for char in game_word):
+                        raise ValueError
                     break
                 except ValueError:
                     print("\t\t\t\t\t\t\t\t\t\t\tPlease do not have any numbers!")
@@ -135,8 +133,8 @@ class Hangman:
                 )
                 if len(guess) > 1:
                     raise ValueError
-                if guess in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]:
-                    raise Exception
+                if guess.isdigit():
+                    raise ValueError
                 break
             except ValueError:
                 clear()
@@ -146,16 +144,8 @@ class Hangman:
                 print("\n\t\t\t\t\t\t\t\t\t\tIncorrect Attempts:")
                 print("\n\t\t\t\t\t\t\t\t\t\t" + " ".join(self.incorrect).upper())
                 print(
-                    "										Please enter a valid character!"
+                    "										Please enter one valid letter!"
                 )
-            except Exception:
-                clear()
-                print("\t\t\t\t\t\t\t\t\t\t", self.print_Hangman())
-                print("\n\n\n")
-                print("\t\t\t\t\t\t\t\t\t\t", self)
-                print("\n\t\t\t\t\t\t\t\t\t\tIncorrect Attempts:")
-                print("\n\t\t\t\t\t\t\t\t\t\t" + " ".join(self.incorrect).upper())
-                print("										No Numbers!!")
 
         if self.is_valid(guess):
             for i in range(len(self.user_word)):
@@ -214,7 +204,7 @@ class Hangman:
                 theme_num = input("\n\t\t\t\t\t\t\t\t\t\t\t\t")
                 if theme_num not in theme_values.keys():
                     raise ValueError
-                file = open(rf"{version1_path}\Hangman_Words\{theme_num}.txt")
+                file = open(rf"{common_directory}\Hangman_Words\{theme_num}.txt")
             except ValueError:
                 print("\t\t\t\t\t\t\t\t\t\tPlease select a valid number:).")
             except IOError:
