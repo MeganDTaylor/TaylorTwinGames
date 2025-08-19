@@ -1,11 +1,38 @@
 # Taylor Twin Games
 
-Taylor Twin Games consists of 2 version of the same games. Version 1 runs an interface through your terminal. Version 2 is a Python Tkinter-based desktop application that serves as a launcher for multiple mini-games. The included games are:
+Taylor Twin Games consists of 2 version of the same games. 
 
-- **Hangman**
-- **Battleship**
-- **Guessing Game**
-- **Mastermind**
+Version 1 runs an interface through your terminal. 
+![Version 1](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%201%20-%20Command%20Prompt/imgs/Taylor%20Twin%20Games.jpg)
+
+Version 2 is a Python Tkinter-based desktop application that serves as a launcher for multiple mini-games. The included games are:
+![Version 2](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%202%20-%20GUI/imgs/Taylor%20Twin%20Games.jpg)
+
+Version 1
+**Hangman**
+  ![Hangman 1](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%201%20-%20Command%20Prompt/imgs/Hangman.jpg)
+  
+**Battleship**
+  ![Battleship 1](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%201%20-%20Command%20Prompt/imgs/Battleship.jpg)
+  
+**Guessing Game**
+  ![Guessing Game 1](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%201%20-%20Command%20Prompt/imgs/Guessing%20Game.jpg)
+  
+**Mastermind**
+  ![Mastermind](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%201%20-%20Command%20Prompt/imgs/Mastermind.jpg)
+
+- Version 2
+**Hangman**
+![Hangman 2](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%202%20-%20GUI/imgs/Hangman.jpg)
+
+**Battleship**
+  ![Battleship 2](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%202%20-%20GUI/imgs/Battleship.jpg)
+  
+**Guessing Game**
+![Guessing Game 2](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%202%20-%20GUI/imgs/Guessing%20Game.jpg)
+
+**Mastermind**
+![Mastermind 2](https://github.com/MeganDTaylor/TaylorTwinGames/blob/main/Version%202%20-%20GUI/imgs/Mastermind.jpg)
 
 ---
 
